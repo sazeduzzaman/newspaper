@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@font-face {
+  font-family: "AdorshoLipi";
+  src: url("/fonts/custom-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: AdorshoLipi;
+}
