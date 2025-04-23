@@ -1,13 +1,14 @@
 import React from "react";
+import HeroSection from "@/components/HomePage/HeroSection/page";
 
-const page = () => {
+export default function Page() {
   return (
-    <div className="dark:bg-gray-500 dark:text-gray-800">
-      <div className="h-screen flex justify-center items-center">
-        <h1 className="text-info text-5xl text-center">দ্রুত ফিরে আসবো...</h1>
+    <>
+      <div className="dark:bg-white dark:text-gray-800 py-10">
+        {/*Home Section Start */}
+        <HeroSection />
+        {/*Home Section End */}
       </div>
-    </div>
+    </>
   );
-};
-
-export default page;
+}
