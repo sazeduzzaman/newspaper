@@ -49,8 +49,10 @@ const page = () => {
 
       {/* Middle Marque And Logo Bar */}
       <div>
-        <div className="mx-auto flex items-center">
-          <p className="text-center w-full mb-0 pt-2">Marquee</p>
+        <div className="mx-auto flex items-center mt-1">
+          <div className="container flex justify-between mx-auto items-center bg-red-500 rounded-md">
+            <p className="text-center w-full mb-0 py-2 text-white">Marquee</p>
+          </div>
         </div>
         <div className="container flex justify-between h-25 mx-auto items-center shadow-2xs">
           {/* Logo */}
@@ -69,7 +71,7 @@ const page = () => {
           {/* Desktop Menu */}
           <div className="mx-auto">
             <img
-              className="w-full"
+              className="w-full rounded-md"
               src="/assets/images/ad-placeholder.jpg"
               alt=""
             />
