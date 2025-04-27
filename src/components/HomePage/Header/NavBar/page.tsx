@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import DynamicBanglaDate from "@/components/DynamicBanglaDate/page";
+import SocialLinks from "@/components/SocialLinks/page";
+import { FaSearch } from "react-icons/fa";
 
 const menuItems = [
   { name: "হোম", href: "/" },
@@ -14,15 +17,42 @@ const page = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-sky-700 dark:text-white text-white text-center">
-        Top bar
+      <div className="bg-sky-700 dark:text-white text-white text-center px-4 py-2">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
+          {/* Current Date */}
+          <div className="text-start text-[14px]">
+            <DynamicBanglaDate />
+          </div>
+
+          {/* Some Links */}
+          <div className="space-x-4 text-center">
+            <Link href="#about" className="hover:underline text-[14px]">
+              বিজ্ঞাপন
+            </Link>
+            <Link href="#services" className="hover:underline text-[14px]">
+              ই-পেপার
+            </Link>
+            <Link href="#contact" className="hover:underline text-[14px]">
+              আর্কাইভ
+            </Link>
+            <Link href="#contact" className="hover:underline text-[14px]">
+              বিজ্ঞাপনের মূল্য
+            </Link>
+          </div>
+
+          {/* Social Links */}
+          <div className="space-x-4">
+            <SocialLinks />
+          </div>
+        </div>
       </div>
+
       {/* Middle Marque And Logo Bar */}
       <div>
-        <div
-          className="container flex justify-between h-25 mx-auto items-center shadow-2xs
-      "
-        >
+        <div className="mx-auto flex items-center">
+          <p className="text-center w-full mb-0 pt-2">Marquee</p>
+        </div>
+        <div className="container flex justify-between h-25 mx-auto items-center shadow-2xs">
           {/* Logo */}
           <Link
             href="/"
@@ -39,7 +69,7 @@ const page = () => {
           {/* Desktop Menu */}
           <div className="mx-auto">
             <img
-              className="w-[90%] mx-auto"
+              className="w-full"
               src="/assets/images/ad-placeholder.jpg"
               alt=""
             />
@@ -59,18 +89,9 @@ const page = () => {
 
           {/* Auth Buttons */}
           <div className="items-center flex-shrink-0 hidden lg:flex gap-2">
-            <Link
-              className="px-6 py-2 rounded border border-violet-600 text-violet-600 hover:bg-violet-50 transition"
-              href="/auth/login"
-            >
-              লগিন করুন
-            </Link>
-            <Link
-              href="/auth/register"
-              className="px-6 py-2 font-semibold rounded bg-violet-600 text-white hover:bg-violet-700 transition"
-            >
-              রেজিস্টার করুন
-            </Link>
+            <button className="search-btn">
+              <FaSearch />
+            </button>
           </div>
 
           {/* Mobile Hamburger */}

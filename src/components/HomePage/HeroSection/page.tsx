@@ -30,7 +30,7 @@ const page = () => {
   ];
 
   return (
-    <section className="p-6 sm:p-0 dark:bg-gray-100 dark:text-gray-800">
+    <section className="p-6 sm:p-0 dark:bg-white dark:text-gray-800">
       <div className="container mx-auto  sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 gap-6 justify-center items-center">
           {/* Left side: Large Image */}
