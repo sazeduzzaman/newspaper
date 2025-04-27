@@ -48,6 +48,13 @@ html[lang="bn"] h3 {
   --red: red;
 }
 
+.menu-border {
+  border-right: 1px solid #fff;
+}
+.main-menu-items {
+  padding: 15px 45px;
+  text-align: center;
+}
 .main-bg {
   background-color: var(--main);
 }
@@ -105,6 +112,6 @@ html[lang="bn"] h3 {
   transition: color 0.3s;
 }
 
-.cst-br{
+.cst-br {
   border-radius: 6px;
 }
