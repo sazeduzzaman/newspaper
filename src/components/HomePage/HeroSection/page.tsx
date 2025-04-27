@@ -26,7 +26,7 @@ const page = () => {
       description: "Click the button to listen on Spotiwhy app.",
       img: "https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp",
       link: "#",
-    }
+    },
   ];
 
   return (
@@ -48,9 +48,9 @@ const page = () => {
               <Link
                 href={card.link}
                 key={index}
-                className="flex flex-col sm:flex-row shadow-sm w-100 hover:shadow-md transition-shadow duration-300 bg-gray-100 rounded-md overflow-hidden"
+                className="flex flex-col sm:flex-row shadow-sm w-full hover:shadow-md transition-shadow duration-300 bg-gray-100 rounded-md overflow-hidden"
               >
-                <div className="sm:w-1/3 bg-gray-100">
+                <div className="sm:w-1/4 bg-gray-100">
                   <img
                     className="w-full h-full object-cover"
                     src={card.img}
