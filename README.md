@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center" id="title">Ajkal US Newspaper</h1>
 
-## Getting Started
+<p align="center"><img src="https://socialify.git.ci/sazeduzzaman/newspaper/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-First, run the development server:
+<p id="description">Next.js Newspaper Project: A modern responsive newspaper template built using Next.js. The site has been rebuilt and is continuously updated before being uploaded or replaced. It offers a clean and organized layout to display news articles efficiently. With automatic page updates during development it ensures seamless news management. Customize and deploy the site effortlessly.</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<h2>🚀 Demo</h2>
+
+[newspaper-sigma-three.vercel.app/](newspaper-sigma-three.vercel.app/)
+
+<h2>Project Screenshots:</h2>
+
+<img src="https://i.ibb.co.com/wrYpsdD8/Screenshot-1.png" alt="project-screenshot" width="100%" height="400/">
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the repository: First clone the project repository to your local machine using Git:</p>
+
+```
+https://github.com/sazeduzzaman/newspaper.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>2. Navigate to the project directory: Move into the project folder:</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd newspaper
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<p>3. Install dependencies: Use either npm yarn or pnpm to install the required dependencies.</p>
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+<p>4. Run the development server: Start the development server to run the project locally:</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<p>5. Open the project: Open your browser and go to http://localhost:3000 to see the project in action.</p>
 
-## Deploy on Vercel
+<h2>🍰 Contribution Guidelines:</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  
+  
+<h2>💻 Built with</h2>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Technologies used in the project:
+
+*   tailwindcss
+*   nextjs
+*   react icons
+*   prettier for tailwindcss
