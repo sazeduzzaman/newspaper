@@ -1,5 +1,3 @@
-"use server";
-
 // Define the NewsCategoryData interface for the fetched data
 interface NewsCategoryData {
   name: string;

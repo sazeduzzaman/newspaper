@@ -58,7 +58,6 @@ export default async function Footer() {
                 সাপ্তাহিক আজকাল কর্তৃক সর্বসত্ব ® সংরক্ষিত
               </p>
             </div>
-
             <div className="">
               <p className="text-end pe-3 pb-5">অনুসরণ করুন</p>
               <SocialLinks />
