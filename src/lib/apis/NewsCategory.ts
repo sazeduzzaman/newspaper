@@ -4,6 +4,7 @@
 interface NewsCategoryData {
   name: string;
   id: number;
+  name_bangla: string;
 }
 
 export const newsCategory = async (): Promise<NewsCategoryData[]> => {
