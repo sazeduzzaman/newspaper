@@ -68,7 +68,6 @@ export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
           </button>
         </div>
       </div>
-
       {/* Category Bar */}
       <div className="bg-sky-700 mx-auto flex items-center w-full">
         <CategoryList categoryItems={categoryItems} />
