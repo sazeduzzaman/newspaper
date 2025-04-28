@@ -1,20 +1,17 @@
 import Link from "next/link";
-import CategoryList from "./CategoryList";
 import { FaSearch } from "react-icons/fa";
 import { NewsCategoryProps } from "@/lib/types/NewsCategoryData";
+import CategoryList from "../CategoryList";
+import Marquee from "./Marquee";
 
 export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
   return (
     <>
       <div>
         {/* Marquee Bar */}
-        <div className="mx-auto flex items-center mt-1">
-          <div className="container flex justify-between mx-auto items-center bg-red-500 rounded-md">
-            <p className="text-center w-full mb-0 py-2 text-white">Marquee</p>
-          </div>
-        </div>
+        <Marquee />
 
-        <div className="container flex justify-between h-25 mx-auto items-center shadow-2xs">
+        <div className="container mx-auto flex h-25 items-center justify-between shadow-2xs">
           {/* Logo */}
           <Link
             href="/"
@@ -38,7 +35,7 @@ export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
           </div>
 
           {/* Auth Buttons */}
-          <div className="items-center flex-shrink-0 hidden lg:flex gap-2">
+          <div className="hidden flex-shrink-0 items-center gap-2 lg:flex">
             <Link href="/search">
               <button className="search-btn">
                 <FaSearch />
@@ -48,12 +45,12 @@ export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
 
           {/* Mobile Hamburger Button */}
           <button
-            className="lg:hidden text-violet-600"
+            className="text-violet-600 lg:hidden"
             aria-label="Toggle menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -70,7 +67,7 @@ export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
       </div>
 
       {/* Category Bar */}
-      <div className="bg-sky-700 mx-auto flex items-center w-full">
+      <div className="mx-auto flex w-full items-center bg-sky-700">
         <CategoryList categoryItems={categoryItems} />
       </div>
     </>
