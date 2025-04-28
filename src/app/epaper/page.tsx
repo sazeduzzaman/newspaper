@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div className="dark:bg-white">
       <div className="container flex justify-between mx-auto items-center h-screen">
-        <h1 className="text-6xl text-black text-center w-full">Forgot Password</h1>
+        <h1 className="text-6xl text-black text-center w-full">Epaper</h1>
       </div>
     </div>
   );

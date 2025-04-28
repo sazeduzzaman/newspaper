@@ -1,13 +1,12 @@
 import Link from "next/link";
 import DynamicBanglaDate from "@/components/DynamicBanglaDate/page";
 import SocialLinks from "@/components/SocialLinks/page";
-import { FaSearch } from "react-icons/fa";
 import { newsCategory } from "@/lib/apis/NewsCategory";
 import NewsCategory from "./NewsCategory";
 
 export default async function Page() {
   const categoryItems = await newsCategory(); // Fetch data from the server
-
+  
   return (
     <>
       {/* Top Bar */}
@@ -20,16 +19,19 @@ export default async function Page() {
 
           {/* Some Links */}
           <div className="space-x-4 text-center">
-            <Link href="#about" className="hover:underline text-[14px]">
+            <Link href="#" className="hover:underline text-[14px]">
               বিজ্ঞাপন
             </Link>
-            <Link href="#services" className="hover:underline text-[14px]">
+            <Link href="/epaper" className="hover:underline text-[14px]">
               ই-পেপার
             </Link>
-            <Link href="#contact" className="hover:underline text-[14px]">
+            <Link href="/search" className="hover:underline text-[14px]">
               আর্কাইভ
             </Link>
-            <Link href="#contact" className="hover:underline text-[14px]">
+            <Link
+              href="/advertisement/adcost"
+              className="hover:underline text-[14px]"
+            >
               বিজ্ঞাপনের মূল্য
             </Link>
           </div>

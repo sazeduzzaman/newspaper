@@ -2,9 +2,9 @@ import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
-import Footer from '@/components/Footer';
-import Header from '@/components/HomePage/Header/Header';
-import '@styles/globals.css';
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/HomePage/Header/Header";
+import "@styles/globals.css";
 
 // app/layout.tsx
 export const metadata = {
