@@ -12,8 +12,7 @@ export default function CategoryList({ categoryItems }: CategoryListProps) {
         {firstTenItems.map((item) => (
           <li className="flex menu-border" key={item.id}>
             <Link
-              // href={`/category/${item.id}`}
-              href={'#'}
+              href={`/category/${item.id}`}
               className="flex items-center main-menu-items px-10 -mb-1  dark:text-white"
             >
               {item.name_bangla}
@@ -38,8 +37,7 @@ export default function CategoryList({ categoryItems }: CategoryListProps) {
                 {remainingItems.map((item) => (
                   <li key={item.id}>
                     <Link
-                      // href={`/category/${item.id}`}
-                      href={'#'}
+                      href={`/category/${item.id}`}
                       className="hover:bg-violet-100 "
                     >
                       {item.name_bangla}
