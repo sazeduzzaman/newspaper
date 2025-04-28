@@ -1,117 +1,48 @@
-/* Importing fonts (must be at the top of the CSS file) */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 /* Tailwind and DaisyUI imports */
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 
-/* Defining the custom font face for AdorshoLipi */
-@font-face {
-  font-family: "AdorshoLipi";
-  src: url("/fonts/custom-font.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+@theme inline {
+    /* fonts */
+    --font-adorsholipi: var(--adorsha-lipi-font), sans-serif, system-ui;
+    --font-popins: var(--popins-font), sans-serif, system-ui;
+
+    /* colors */
+    --color-main: #165588;
+    --color-secondary: #dc2329;
+    --color-white: white;
+    --color-black: black;
+    --color-red: red;
 }
 
-/* Default font for the body (English font) */
-body {
-  font-family: "Roboto" sans-serif; /* Default font for English */
+@layer utilities {
+    .menu-border {
+        border-right: 1px solid #fff;
+    }
+
+    .main-bg {
+        @apply bg-main;
+    }
+
+    .second-bg {
+        @apply bg-secondary;
+    }
+
+    .cst-br {
+        border-radius: 6px;
+    }
 }
 
-/* Apply AdorshoLipi for Bangla content */
-html[lang="bn"] {
-  font-family: "AdorshoLipi", sans-serif; /* Default for Bangla */
-}
+@layer components {
+    .main-menu-items {
+        @apply p-[15px_45px] text-center;
+    }
 
-/* Optional: You can also target specific elements like paragraphs or headings for English */
-p,
-h1,
-h2,
-h3 {
-  font-family: "Roboto" sans-serif; /* English font for content */
-}
+    .search-btn {
+        @apply inline-block bg-[#165588] text-[0.875rem] pl-[15px] pr-[15px] h-[90px] text-center text-[#fff] no-underline cursor-pointer select-none relative overflow-hidden rounded-[6px] [transition:box-shadow_0.3s_ease-in-out]  before:content-[''] before:absolute before:top-[0] before:-left-full before:w-full before:h-full before:bg-[white] before:[transition:left_0.3s_ease-in-out] before:z-0 before:opacity-80 hover:before:left-[100%];
+    }
 
-/* Apply AdorshoLipi for Bangla text in paragraphs and headings */
-html[lang="bn"] p,
-html[lang="bn"] h1,
-html[lang="bn"] h2,
-html[lang="bn"] h3 {
-  font-family: "AdorshoLipi", sans-serif; /* Bangla font */
-}
-
-/* Root Style */
-:root {
-  --main: #165588;
-  --secondary: #dc2329;
-  --white: white;
-  --black: black;
-  --red: red;
-}
-
-.menu-border {
-  border-right: 1px solid #fff;
-}
-.main-menu-items {
-  padding: 15px 45px;
-  text-align: center;
-}
-.main-bg {
-  background-color: var(--main);
-}
-.second-bg {
-  background-color: var(--secondary);
-}
-
-.search-btn {
-  display: inline-block;
-  background-color: var(--main);
-  font-size: 0.875rem;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 90px;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.search-btn:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--white);
-  transition: left 0.3s ease-in-out;
-  z-index: 0;
-  opacity: 0.8;
-}
-
-.search-btn:hover:before {
-  left: 100%;
-}
-
-.search-btn span {
-  position: relative;
-  z-index: 1;
-}
-.footer-links {
-  font-size: 18px;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
-  line-height: 24px;
-  transition: color 0.3s;
-}
-
-.cst-br {
-  border-radius: 6px;
+    .footer-links {
+        @apply text-[18px]/[24px] font-normal duration-300 hover:text-[#808080];
+    }
 }
