@@ -34,11 +34,11 @@ export const metadata = {
   canonicalUrl: "https://www.ajkal.us",
 };
 
-const Adorsholipi = localFont({
-//   src: "./fonts/AdorshoLipi/AdorshoLipi.woff2",
-  src: "/fonts/AdorshoLipi/AdorshoLipi.woff2",
-  variable: "--adorsho-lipi-font",
-});
+// const Adorsholipi = localFont({
+// //   src: "./fonts/AdorshoLipi/AdorshoLipi.woff2",
+//   src: "/fonts/AdorshoLipi/AdorshoLipi.woff2",
+//   variable: "--adorsho-lipi-font",
+// });
 
 const Popins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -56,7 +56,8 @@ export default function RootLayout({
   return (
     <html lang="bn">
       <body
-        className={cn("antialiased", Adorsholipi.className, Popins.variable)}
+        // className={cn("antialiased", Adorsholipi.className, Popins.variable)}
+        className={cn("antialiased", Popins.variable)}
       >
         <Header />
         <main>{children}</main>
