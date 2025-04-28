@@ -35,7 +35,8 @@ export const metadata = {
 };
 
 const Adorsholipi = localFont({
-  src: "./fonts/AdorshoLipi/AdorshoLipi.woff2",
+//   src: "./fonts/AdorshoLipi/AdorshoLipi.woff2",
+  src: "/fonts/AdorshoLipi/AdorshoLipi.woff2",
   variable: "--adorsho-lipi-font",
 });
 
