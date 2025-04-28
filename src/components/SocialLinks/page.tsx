@@ -5,18 +5,18 @@ import { FaFacebookF, FaYoutube, FaUser } from "react-icons/fa";
 const SocialLinks = () => {
   return (
     <div className="flex justify-end items-end">
-      <Link type="button" href={"#"} className="me-2" target="_blank">
-        <button className="btn btn-circle bg-white border-0 text-black btn-sm">
+      <Link type="button" href={"https://www.facebook.com/ajkalusa"} className="me-2" target="_blank">
+        <button className="btn btn-circle bg-black border-0 text-white btn-sm">
           <FaFacebookF className="text-[16px]" />
         </button>
       </Link>
-      <Link type="button" href={"#"} className="me-2" target="_blank">
-        <button className="btn btn-circle bg-white border-0 text-black btn-sm">
+      <Link type="button" href={"https://www.youtube.com/@ajkalusa/featured"} className="me-2" target="_blank">
+        <button className="btn btn-circle bg-black border-0 text-white btn-sm">
           <FaYoutube className="text-[16px]" />
         </button>
       </Link>
-      <Link type="button" href={"#"} className="me-2" target="_blank">
-        <button className="btn btn-circle bg-white border-0 text-black btn-sm">
+      <Link type="button" href="auth/login" className="me-2">
+        <button className="btn btn-circle bg-black border-0 text-white btn-sm">
           <FaUser className="text-[16px]" />
         </button>
       </Link>

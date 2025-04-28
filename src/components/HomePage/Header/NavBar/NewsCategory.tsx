@@ -39,9 +39,11 @@ export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
 
           {/* Auth Buttons */}
           <div className="items-center flex-shrink-0 hidden lg:flex gap-2">
-            <button className="search-btn">
-              <FaSearch />
-            </button>
+            <Link href="/search">
+              <button className="search-btn">
+                <FaSearch />
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
