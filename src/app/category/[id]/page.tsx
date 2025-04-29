@@ -1,7 +1,6 @@
 import CategoryData from "@/components/CategoryData/CategoryData";
 import { Category, CategoryPageParams } from "@/lib/types/CategoryTypes";
 
-// Static Params fetching
 export async function generateStaticParams() {
   const res = await fetch("https://backoffice.ajkal.us/news-category");
   const json = await res.json();
@@ -14,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params }: CategoryPageParams) {
-  const { id } = params;
+  const { id } = params; // ✅ params is NOT async
 
   const response = await fetch(`https://backoffice.ajkal.us/category-news/${id}`, {
     cache: "no-store",
