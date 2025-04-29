@@ -1,5 +1,5 @@
 import CategoryData from "@/components/CategoryData/CategoryData";
-import { Category } from "@/types/types";
+import { Category } from "@/lib/types/CategoryTypes";
 
 export async function generateStaticParams() {
   const res = await fetch("https://backoffice.ajkal.us/news-category");
