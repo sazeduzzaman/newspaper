@@ -16,15 +16,19 @@ export async function generateStaticParams() {
 }
 
 // Component handling the page
-export default async function CategoryPage({ params }: { params: { id: string } }) {
-  const { id } = params; // Get the id from params
+export default async function CategoryPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params; // Get the id from params
 
   // ✅ Fetch the specific category news by id
   const response = await fetch(
     `https://backoffice.ajkal.us/category-news/${id}`,
     {
       cache: "no-store", // To prevent caching
-    }
+    },
   );
 
   if (!response.ok) {
@@ -37,7 +41,7 @@ export default async function CategoryPage({ params }: { params: { id: string } 
   return (
     <div className="dark:bg-white">
       <div className="container mx-auto sm:px-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 gap-6 justify-center items-center">
+        <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12">
           <div className="col-span-12 xl:col-span-9">
             {/* Pass the data to the component */}
             <CategoryData data={singleCategoryData} />
