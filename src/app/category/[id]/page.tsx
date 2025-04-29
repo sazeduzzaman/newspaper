@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import CategoryData from "@/components/CategoryData/CategoryData";
 import { Category } from "@/lib/types/CategoryTypes";
 
