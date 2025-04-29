@@ -1,4 +1,5 @@
 // src/app/category/[id]/page.tsx
+
 import CategoryData from "@/components/CategoryData/CategoryData";
 import { Category } from "@/lib/types/CategoryTypes";
 
@@ -7,20 +8,24 @@ export async function generateStaticParams() {
   const res = await fetch("https://backoffice.ajkal.us/news-category");
   const json = await res.json();
 
-  const categories: Category[] = json.data;
+  const categories: Category[] = json.data; // Typing it as Category array
 
   return categories.map((category) => ({
     id: category.id.toString(),
   }));
 }
 
-// This function is **not async** for params since we do not await params
+// Component handling the page
 export default async function CategoryPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+  const { id } = params; // Get the id from params
 
-  const response = await fetch(`https://backoffice.ajkal.us/category-news/${id}`, {
-    next: { revalidate: 60 }, // Cache page, refresh every 60 seconds
-  });
+  // ✅ Fetch the specific category news by id
+  const response = await fetch(
+    `https://backoffice.ajkal.us/category-news/${id}`,
+    {
+      cache: "no-store", // To prevent caching
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch category news");
@@ -34,6 +39,7 @@ export default async function CategoryPage({ params }: { params: { id: string } 
       <div className="container mx-auto sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 gap-6 justify-center items-center">
           <div className="col-span-12 xl:col-span-9">
+            {/* Pass the data to the component */}
             <CategoryData data={singleCategoryData} />
           </div>
           <div className="col-span-12 xl:col-span-3">
