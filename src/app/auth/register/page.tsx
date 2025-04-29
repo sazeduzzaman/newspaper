@@ -5,7 +5,7 @@ import "../auth.css";
 
 const page = () => {
   return (
-    <div className="dark:bg-white">
+    <div className="dark:bg-white bg-white">
       <div className="container mx-auto sm:px-0 py-10">
         <div className="shadow-sm w-2/3 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2">

@@ -27,7 +27,7 @@ export default async function Footer() {
           <FooterList categoryItems={categoryItems} />
         </div>
         {/* Footer Info Text Here */}
-        <div className="container mx-auto sm:px-0 pb-10 bg-black">
+        <div className="container mx-auto sm:px-0 pb-10 bg-black text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center">
             <div className="">
               <h1 className="text-3xl">সম্পাদক ও প্রকাশক : শাহ্‌ নেওয়াজ</h1>
@@ -68,13 +68,13 @@ export default async function Footer() {
       <div className="mx-auto sm:px-0 py-3 second-bg">
         <div className="container mx-auto sm:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start">
-            <div className="">
+            <div className="text-white">
               <small>
                 এই ওয়েবসাইটের কোনো লেখা, ছবি, অডিও, ভিডিও অনুমতি ছাড়া ব্যবহার
                 বেআইনি।
               </small>
             </div>
-            <div className="">
+            <div className="text-white">
               <Link href={"https://flixzaglobal.com/"} target="_blank">
                 <p className="text-end flex justify-end">
                   <small>Developed With Love By</small>

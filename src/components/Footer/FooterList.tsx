@@ -9,14 +9,14 @@ export default function FooterList({ categoryItems }: CategoryListProps) {
   const thirdFour = categoryItems.slice(10, 15);
   const lastFour = categoryItems.slice(15);
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-6 justify-center items-start">
+    <div className="grid grid-cols-1 text-white sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-6 justify-center items-start">
       <div>
         <ul>
           {firstFour.map((item) => (
             <li className="pb-3" key={item.id}>
               <Link
                 href={`/category/${item.id}`}
-                className="footer-links hover:underline"
+                className="footer-links text-white hover:underline"
               >
                 {item.name_bangla}
               </Link>
@@ -35,7 +35,7 @@ export default function FooterList({ categoryItems }: CategoryListProps) {
             <li className="pb-3" key={item.id}>
               <Link
                 href={`/category/${item.id}`}
-                className="footer-links hover:underline"
+                className="footer-links text-white hover:underline"
               >
                 {item.name_bangla}
               </Link>
@@ -54,7 +54,7 @@ export default function FooterList({ categoryItems }: CategoryListProps) {
             <li className="pb-3" key={item.id}>
               <Link
                 href={`/category/${item.id}`}
-                className="footer-links hover:underline"
+                className="footer-links text-white hover:underline"
               >
                 {item.name_bangla}
               </Link>
@@ -73,7 +73,7 @@ export default function FooterList({ categoryItems }: CategoryListProps) {
             <li className="pb-3" key={item.id}>
               <Link
                 href={`/category/${item.id}`}
-                className="footer-links hover:underline"
+                className="footer-links text-white hover:underline"
               >
                 {item.name_bangla}
               </Link>

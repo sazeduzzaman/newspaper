@@ -2,7 +2,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="dark:bg-white">
+    <div className="dark:bg-white bg-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
         <div className="text-black py-20">
           <div className="border-b-2 border-[#165588] pb-2 w-[50%]">

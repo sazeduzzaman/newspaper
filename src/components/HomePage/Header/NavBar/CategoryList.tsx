@@ -13,7 +13,7 @@ export default function CategoryList({ categoryItems }: CategoryListProps) {
           <li className="flex menu-border" key={item.id}>
             <Link
               href={`/category/${item.id}`}
-              className="flex items-center main-menu-items px-10 -mb-1  dark:text-white"
+              className="flex items-center main-menu-items px-10 -mb-1  dark:text-white text-white"
             >
               {item.name_bangla}
             </Link>
@@ -26,13 +26,13 @@ export default function CategoryList({ categoryItems }: CategoryListProps) {
               <div
                 tabIndex={0}
                 role="button"
-                className="flex items-center px-4 -mb-1  cursor-pointer dark:text-white"
+                className="flex items-center px-4 -mb-1  cursor-pointer dark:text-white text-white"
               >
                 অন্যান্য +
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow dark:bg-white"
+                className="dropdown-content menu rounded-box z-10 w-52 p-2 shadow dark:bg-white bg-white"
               >
                 {remainingItems.map((item) => (
                   <li key={item.id}>

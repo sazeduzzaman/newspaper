@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { NewsCategoryProps } from "@/lib/types/NewsCategoryData";
 import CategoryList from "../CategoryList";
-import Marquee from "./Marquee";
+import Marquee from "./MarqueeSlide/Marquee";
 
 export default function NewsCategory({ categoryItems }: NewsCategoryProps) {
   return (
