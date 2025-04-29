@@ -5,6 +5,7 @@ export interface Category {
   name?: string; // Add more fields as needed
 }
 
+// src/lib/types/CategoryTypes.ts
 export interface CategoryPageParams {
   params: {
     id: string;
