@@ -6,7 +6,7 @@
     /* fonts */
     --font-adorsholipi: var(--adorsha-lipi-font), sans-serif, system-ui;
     --font-popins: var(--popins-font), sans-serif, system-ui;
-
+    --disqus-anchor-color: #1a1a1a; /* Use hex or rgb, not oklch */
     /* colors */
     --color-main: #165588;
     --color-secondary: #dc2329;
@@ -14,7 +14,9 @@
     --color-black: black;
     --color-red: red;
 }
-
+:root {
+    --link-color: oklch(0.210 0.006285 0.885); /* This is invalid for Disqus */
+  }
 @layer utilities {
     .menu-border {
         border-right: 1px solid #fff;
@@ -34,6 +36,12 @@
     .cst-br {
         border-radius: 6px;
     }
+    .disqus-container {
+        display: block;
+        min-height: 300px;
+        background-color: red;
+      }
+      
 }
 
 @layer components {

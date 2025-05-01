@@ -9,6 +9,7 @@ import DisqusComments from "@/util/DisqusComments/DisqusComments";
 // Define the type for the news data prop
 interface NewsDetails {
   data: {
+    id: number;
     news_title: string;
     news_author: string;
     news_detail: string;
@@ -82,7 +83,16 @@ export default function NewsDetails({ data }: NewsDetails) {
       </div>
       {/* Share News */}
       <div className="mb-5">
-        <DisqusComments />
+        <DisqusComments
+          post={{
+            id: data.id,
+            news_title: data.news_title,
+            news_detail: data.news_detail,
+            news_author: data.news_author,
+            news_time: data.news_time,
+            thumbnail_img: data.title_img,
+          }}
+        />
       </div>
       {/* Share News End */}
       <RecentNews catId={data.category_id} />
