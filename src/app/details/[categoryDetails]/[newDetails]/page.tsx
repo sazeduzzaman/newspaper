@@ -1,3 +1,4 @@
+import NewsDetails from "@/components/NewsDetails/NewsDetails";
 import React from "react";
 
 // Type definitions for params and the fetched news data
@@ -18,7 +19,7 @@ export async function generateStaticParams(): Promise<
   { categoryDetails: string; newDetails: string }[]
 > {
   const categoriesRes = await fetch(
-    "https://backoffice.ajkal.us/news-category"
+    "https://backoffice.ajkal.us/news-category",
   );
   const categoriesData = await categoriesRes.json();
 
@@ -27,7 +28,7 @@ export async function generateStaticParams(): Promise<
   if (Array.isArray(categoriesData?.data)) {
     for (const category of categoriesData.data) {
       const newsRes = await fetch(
-        `https://backoffice.ajkal.us/category-news/${category.id}`
+        `https://backoffice.ajkal.us/category-news/${category.id}`,
       );
       const newsData = await newsRes.json();
 
@@ -51,7 +52,6 @@ export async function generateStaticParams(): Promise<
   return paths;
 }
 
-
 export default async function NewsDetailsPage({
   params,
 }: {
@@ -61,9 +61,29 @@ export default async function NewsDetailsPage({
 
   console.log(categoryDetails, newDetails);
 
+  // Fetching the news details
+  const res = await fetch(
+    `https://backoffice.ajkal.us/news-detail/${newDetails}`,
+  );
+
+  if (!res.ok) {
+    return <div>❌ News not found.</div>;
+  }
+
+  const json = await res.json();
+
+  // Check if the fetched data is valid
+  if (!json?.data) {
+    return <div>❌ News not found.</div>;
+  }
+
+  // Renamed to avoid variable name conflict
+  const newsDetails = json.data;
+
   return (
-    <div style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
-      {categoryDetails} - {newDetails}
+    <div>
+      {/* Passing the newsDetails to the NewsDetails component */}
+      <NewsDetails data={newsDetails} />
     </div>
   );
 }
