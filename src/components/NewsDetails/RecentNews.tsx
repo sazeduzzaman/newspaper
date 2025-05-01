@@ -29,10 +29,16 @@ function getRandomItems<T>(array: T[], count: number): T[] {
 }
 
 export default async function RecentNews({ catId }: CategoryDataProps) {
+  //   const res = await fetch(
+  //     `https://backoffice.ajkal.us/category-news/${catId}`,
+  //     {
+  //       cache: "no-store", // ensures fresh fetch on each request
+  //     },
+  //   );
   const res = await fetch(
     `https://backoffice.ajkal.us/category-news/${catId}`,
     {
-      cache: "no-store", // ensures fresh fetch on each request
+      next: { revalidate: 3600 },
     },
   );
 
@@ -67,7 +73,11 @@ export default async function RecentNews({ catId }: CategoryDataProps) {
             >
               <div className="card w-full bg-base-100 shadow-lg">
                 <figure>
-                  <NewsImage news={news} heightClass="h-50" hoverEffect={true} />
+                  <NewsImage
+                    news={news}
+                    heightClass="h-50"
+                    hoverEffect={true}
+                  />
                 </figure>
                 <div className="card-body">
                   <div className="card-actions justify-start">
