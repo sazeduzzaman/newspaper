@@ -11,15 +11,15 @@ export default function CategoryData({ data }: CategoryDataProps) {
 
   const featureItems = featured.slice(0, 1);
   const nonFeatureSpecificItems = nonFeatured.slice(0, 4);
-  const nonFeatureItems = nonFeatured.slice(4);
-  console.log(nonFeatureItems, "nonFeatureItems")
+  // const nonFeatureItems = nonFeatured.slice(4);
+  // console.log(nonFeatureItems, "nonFeatureItems")
   return (
     <div className="my-10">
       <div className="container mx-auto text-white sm:px-0">
         <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
           <div className="">
             {featureItems.map((item: any) => (
-              <Link href={`/details/${item.category_name}/${item.id}`} key={item.id}>
+              <Link href={`/details/${item.category_name.toLowerCase()}/${item.id}`} key={item.id}>
                 <div className="card relative w-full overflow-hidden bg-base-100 shadow-sm">
                   <figure className="relative">
                     <img
@@ -43,7 +43,7 @@ export default function CategoryData({ data }: CategoryDataProps) {
 
           <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
             {nonFeatureSpecificItems.map((items: any) => (
-              <Link href={`/details/${items.category_name}/${items.id}`} key={items.id}>
+              <Link href={`/details/${items.category_name.toLowerCase()}/${items.id}`} key={items.id}>
                 <div className="text-black">
                   <div
                     className="card w-full bg-base-100 shadow-sm"
