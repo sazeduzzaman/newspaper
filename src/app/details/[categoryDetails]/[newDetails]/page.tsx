@@ -14,38 +14,37 @@ interface News {
   news_detail: string;
 }
 
+// ✅ generateStaticParams must only use plain fetch
 export async function generateStaticParams(): Promise<
   { categoryDetails: string; newDetails: string }[]
 > {
-  // Fetch categories
-  const categoriesRes = await fetch("https://backoffice.ajkal.us/news-category");
+  const categoriesRes = await fetch(
+    "https://backoffice.ajkal.us/news-category",
+  );
   const categoriesData = await categoriesRes.json();
 
   const paths: { categoryDetails: string; newDetails: string }[] = [];
 
-  // Check if categories data is an array
   if (Array.isArray(categoriesData?.data)) {
-    // Loop through each category
     for (const category of categoriesData.data) {
-      // Fetch news for the category
+      // ❌ REMOVE revalidate here
       const newsRes = await fetch(
-        `https://backoffice.ajkal.us/category-news/${category.id}`
+        `https://backoffice.ajkal.us/category-news/${category.id}`,
       );
+
+      if (!newsRes.ok) continue;
+
       const newsData = await newsRes.json();
 
-      // Check if news data is an array
       if (Array.isArray(newsData?.data)) {
-        // Loop through each news item
         for (const news of newsData.data) {
-          // Sanitize the category name (remove spaces and unsafe characters)
           const sanitizedCategory = news.category_name
-            .toLowerCase()            // Convert to lowercase
-            .trim()                   
-            .replace(/-/g, "")               
-            .replace(/\s+/g, "")      // Remove all spaces
-            .replace(/[^\w-]/g, "");  // Remove any non-word characters (except underscores and dashes)
+            .toLowerCase()
+            .trim()
+            .replace(/-/g, "")
+            .replace(/\s+/g, "")
+            .replace(/[^\w-]/g, "");
 
-          // Add the category and news id as a path
           paths.push({
             categoryDetails: sanitizedCategory,
             newDetails: news.id.toString().trim(),
@@ -55,10 +54,8 @@ export async function generateStaticParams(): Promise<
     }
   }
 
-  // Return the generated paths
   return paths;
 }
-
 
 export default async function NewsDetailsPage({
   params,
@@ -69,9 +66,12 @@ export default async function NewsDetailsPage({
 
   console.log(categoryDetails, newDetails);
 
-  // Fetching the news details
+  // ✅ It's fine to use revalidate here
   const res = await fetch(
     `https://backoffice.ajkal.us/news-detail/${newDetails}`,
+    {
+      next: { revalidate: 3600 },
+    },
   );
 
   if (!res.ok) {
@@ -95,7 +95,10 @@ export default async function NewsDetailsPage({
           {/* Left side: Large Image */}
           <div className="col-span-12 xl:col-span-9">
             {/* ✅ Pass data to the component */}
-            {/* <NewsDetails data={newsDetails} /> */}
+            <NewsDetails data={newsDetails} />
+            <div>
+              <h1>{newsDetails.news_title}</h1>
+            </div>
           </div>
           <div className="col-span-12 xl:col-span-3">
             <p className="text-black">Sidebar</p>
