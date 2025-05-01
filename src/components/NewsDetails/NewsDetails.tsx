@@ -4,7 +4,6 @@ import RecentNews from "./RecentNews";
 import Link from "next/link";
 import NewsImage from "../FallBackImg/NewsImage";
 import NewsActions from "../NewsActions/NewsActions";
-import DisqusComments from "@/util/DisqusComments/DisqusComments";
 
 // Define the type for the news data prop
 interface NewsDetails {
@@ -82,18 +81,6 @@ export default function NewsDetails({ data }: NewsDetails) {
         </div>
       </div>
       {/* Share News */}
-      <div className="mb-5">
-        <DisqusComments
-          post={{
-            id: data.id,
-            news_title: data.news_title,
-            news_detail: data.news_detail,
-            news_author: data.news_author,
-            news_time: data.news_time,
-            thumbnail_img: data.title_img,
-          }}
-        />
-      </div>
       {/* Share News End */}
       <RecentNews catId={data.category_id} />
     </div>

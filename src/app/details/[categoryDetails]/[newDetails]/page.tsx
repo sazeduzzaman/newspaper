@@ -14,32 +14,38 @@ interface News {
   news_detail: string;
 }
 
-// This function will generate static paths for pre-rendering
 export async function generateStaticParams(): Promise<
   { categoryDetails: string; newDetails: string }[]
 > {
-  const categoriesRes = await fetch(
-    "https://backoffice.ajkal.us/news-category",
-  );
+  // Fetch categories
+  const categoriesRes = await fetch("https://backoffice.ajkal.us/news-category");
   const categoriesData = await categoriesRes.json();
 
   const paths: { categoryDetails: string; newDetails: string }[] = [];
 
+  // Check if categories data is an array
   if (Array.isArray(categoriesData?.data)) {
+    // Loop through each category
     for (const category of categoriesData.data) {
+      // Fetch news for the category
       const newsRes = await fetch(
-        `https://backoffice.ajkal.us/category-news/${category.id}`,
+        `https://backoffice.ajkal.us/category-news/${category.id}`
       );
       const newsData = await newsRes.json();
 
+      // Check if news data is an array
       if (Array.isArray(newsData?.data)) {
+        // Loop through each news item
         for (const news of newsData.data) {
+          // Sanitize the category name (remove spaces and unsafe characters)
           const sanitizedCategory = news.category_name
-            .toLowerCase()
-            .trim()
-            .replace(/\s+/g, "-") // Replace spaces with dashes
-            .replace(/[^\w-]/g, ""); // Remove unsafe characters
+            .toLowerCase()            // Convert to lowercase
+            .trim()                   
+            .replace(/-/g, "")               
+            .replace(/\s+/g, "")      // Remove all spaces
+            .replace(/[^\w-]/g, "");  // Remove any non-word characters (except underscores and dashes)
 
+          // Add the category and news id as a path
           paths.push({
             categoryDetails: sanitizedCategory,
             newDetails: news.id.toString().trim(),
@@ -49,8 +55,10 @@ export async function generateStaticParams(): Promise<
     }
   }
 
+  // Return the generated paths
   return paths;
 }
+
 
 export default async function NewsDetailsPage({
   params,
@@ -87,7 +95,7 @@ export default async function NewsDetailsPage({
           {/* Left side: Large Image */}
           <div className="col-span-12 xl:col-span-9">
             {/* ✅ Pass data to the component */}
-            <NewsDetails data={newsDetails} />
+            {/* <NewsDetails data={newsDetails} /> */}
           </div>
           <div className="col-span-12 xl:col-span-3">
             <p className="text-black">Sidebar</p>
