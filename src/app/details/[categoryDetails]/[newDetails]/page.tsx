@@ -81,9 +81,19 @@ export default async function NewsDetailsPage({
   const newsDetails = json.data;
 
   return (
-    <div>
-      {/* Passing the newsDetails to the NewsDetails component */}
-      <NewsDetails data={newsDetails} />
+    <div className="bg-white dark:bg-white">
+      <div className="container mx-auto sm:px-0">
+        <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12">
+          {/* Left side: Large Image */}
+          <div className="col-span-12 xl:col-span-9">
+            {/* ✅ Pass data to the component */}
+            <NewsDetails data={newsDetails} />
+          </div>
+          <div className="col-span-12 xl:col-span-3">
+            <p className="text-black">Sidebar</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

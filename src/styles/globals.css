@@ -23,6 +23,9 @@
     .main-bg {
         @apply bg-main;
     }
+    .main-text {
+        @apply text-main;
+    }
 
     .second-bg {
         @apply bg-secondary;
