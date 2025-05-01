@@ -1,6 +1,6 @@
 import Link from "next/link";
 import DynamicBanglaDate from "@/components/DynamicBanglaDate/page";
-import SocialLinks from "@/components/SocialLinks/page";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import { newsCategory } from "@/lib/apis/NewsCategory";
 import NewsCategory from "./NewsCategory/NewsCategory";
 

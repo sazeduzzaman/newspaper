@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SocialLinks from "../SocialLinks/page";
+import SocialLinks from "../SocialLinks/SocialLinks";
 import { newsCategory } from "@/lib/apis/NewsCategory";
 import FooterList from "./FooterList";
 

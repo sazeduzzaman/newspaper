@@ -1,14 +1,13 @@
 import React from "react";
 import NewsTime from "../Time/NewsTime";
-import { AiFillCopy, AiFillFacebook, AiFillPrinter } from "react-icons/ai";
-import { FaWhatsapp } from "react-icons/fa";
 import RecentNews from "./RecentNews";
 import Link from "next/link";
 import NewsImage from "../FallBackImg/NewsImage";
-// import { FaWhatsapp } from "react-icons/fa";
+import NewsActions from "../NewsActions/NewsActions";
+import DisqusComments from "@/util/DisqusComments/DisqusComments";
 
 // Define the type for the news data prop
-interface CategoryDataProps {
+interface NewsDetails {
   data: {
     news_title: string;
     news_author: string;
@@ -21,7 +20,7 @@ interface CategoryDataProps {
   };
 }
 
-export default function NewsDetails({ data }: CategoryDataProps) {
+export default function NewsDetails({ data }: NewsDetails) {
   const removeImgTags = (html: string) => {
     return html.replace(/<img[^>]*>/g, ""); // Removes all <img> tags
   };
@@ -54,24 +53,11 @@ export default function NewsDetails({ data }: CategoryDataProps) {
               </div>
             </div>
           </div>
-          <div>
-            <button className="main-text btn me-2 btn-circle bg-blend-lighten btn-sm">
-              <AiFillFacebook />
-            </button>
-            <button className="main-text btn me-2 btn-circle bg-blend-lighten btn-sm">
-              <FaWhatsapp />
-            </button>
-            <button className="main-text btn me-2 btn-circle bg-blend-lighten btn-sm">
-              <AiFillPrinter />
-            </button>
-            <button className="main-text btn me-2 btn-circle bg-blend-lighten btn-sm">
-              <AiFillCopy />
-            </button>
-          </div>
+          <NewsActions />
         </div>
         <div className="divider"></div>
         <div
-          className="py-5 font-semibold leading-7"
+          className="py-5 leading-7 font-semibold"
           dangerouslySetInnerHTML={{ __html: data.news_short_brief }}
         />
         <div>
@@ -94,6 +80,11 @@ export default function NewsDetails({ data }: CategoryDataProps) {
           />
         </div>
       </div>
+      {/* Share News */}
+      <div className="mb-5">
+        <DisqusComments />
+      </div>
+      {/* Share News End */}
       <RecentNews catId={data.category_id} />
     </div>
   );
