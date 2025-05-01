@@ -105,7 +105,7 @@ export default function NewsDetails({ data }: NewsDetailsProps) {
       </div>
 
       {/* Recent News Sidebar */}
-      {/* <RecentNews catId={data.category_id || 0} /> */}
+      <RecentNews catId={data.category_id || 0} />
     </div>
   );
 }
