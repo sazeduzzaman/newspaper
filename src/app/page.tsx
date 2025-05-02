@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "@/components/HomePage/HeroSection/page";
+import Home from "@/components/HomePage/Home/Home";
 
 export const metadata = {
   title: "সাপ্তাহিক আজকাল || Weekly Ajkal",
@@ -32,9 +32,9 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="dark:bg-white bg-white dark:text-gray-800 py-10">
+      <div className="bg-white py-10 dark:bg-white dark:text-gray-800">
         {/*Home Section Start */}
-        <HeroSection />
+        <Home />
         {/*Home Section End */}
       </div>
     </>

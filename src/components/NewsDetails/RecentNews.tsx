@@ -76,6 +76,7 @@ export default async function RecentNews({ catId }: CategoryDataProps) {
                   <NewsImage
                     news={news}
                     heightClass="h-50"
+                    widthClass="w-full"
                     hoverEffect={true}
                   />
                 </figure>

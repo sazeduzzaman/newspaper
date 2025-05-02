@@ -1,4 +1,4 @@
-export interface BreakingNewsData {
+export interface BreakingNewsMarqueData {
   id: number;
   name: string; // Regular name of the news
   name_bangla: string; // Bengali title of the news
@@ -6,6 +6,6 @@ export interface BreakingNewsData {
   news_title: string;  // This is used to show the title in Marquee
 }
 
-export interface BreakingNewsProps {
-  breakingItems: BreakingNewsData[];
+export interface BreakingNewsMarqueProps {
+  breakingItems: BreakingNewsMarqueData[];
 }

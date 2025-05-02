@@ -96,9 +96,6 @@ export default async function NewsDetailsPage({
           <div className="col-span-12 xl:col-span-9">
             {/* ✅ Pass data to the component */}
             <NewsDetails data={newsDetails} />
-            <div>
-              <h1>{newsDetails.news_title}</h1>
-            </div>
           </div>
           <div className="col-span-12 xl:col-span-3">
             <p className="text-black">Sidebar</p>

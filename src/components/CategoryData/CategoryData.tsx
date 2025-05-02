@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import NewsImage from "../FallBackImg/NewsImage";
 
 interface CategoryDataProps {
   data: any; // later you can create a better type
@@ -19,18 +20,20 @@ export default function CategoryData({ data }: CategoryDataProps) {
         <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
           <div className="">
             {featureItems.map((item: any) => (
-              <Link href={`/details/${item.category_name.toLowerCase()}/${item.id}`} key={item.id}>
+              <Link
+                href={`/details/${item.category_name.toLowerCase()}/${item.id}`}
+                key={item.id}
+              >
                 <div className="card relative w-full overflow-hidden bg-base-100 shadow-sm">
                   <figure className="relative">
-                    <img
-                      className="h-[515px] cursor-grab object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                      src={`https://ajkal.us/img/news/${item.title_img}`}
-                      alt={item.news_title}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null; // prevent infinite loop
-                        target.src = "https://ajkal.us/img/news/default.jpg"; // your fallback image
+                    <NewsImage
+                      news={{
+                        ...item,
+                        title_img: item.title_img || "fallback.jpg",
                       }}
+                      heightClass="h-[515px]"
+                      widthClass="w-full"
+                      hoverEffect={false}
                     />
                   </figure>
                   <div className="card-body text-black">
@@ -43,7 +46,10 @@ export default function CategoryData({ data }: CategoryDataProps) {
 
           <div className="grid grid-cols-1 items-center justify-center gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
             {nonFeatureSpecificItems.map((items: any) => (
-              <Link href={`/details/${items.category_name.toLowerCase()}/${items.id}`} key={items.id}>
+              <Link
+                href={`/details/${items.category_name.toLowerCase()}/${items.id}`}
+                key={items.id}
+              >
                 <div className="text-black">
                   <div
                     className="card w-full bg-base-100 shadow-sm"

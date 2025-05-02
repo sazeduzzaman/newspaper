@@ -1,11 +1,14 @@
 "use client";
 
-import { BreakingNewsProps } from "@/lib/types/BreakingNewsTypes";
+import { BreakingNewsMarqueProps } from "@/lib/types/BreakingNewsMarqueTypes";
 import AutoScroll from "embla-carousel-auto-scroll";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 
-export default function MarqueeItems({ breakingItems }: BreakingNewsProps) {
+export default function MarqueeItems({
+  breakingItems,
+}: BreakingNewsMarqueProps) {
+  console.log(breakingItems, "breakingItems");
   const [emblaRef] = useEmblaCarousel(
     { loop: true, containScroll: "keepSnaps" },
     [

@@ -86,6 +86,7 @@ export default function NewsDetails({ data }: NewsDetailsProps) {
           <NewsImage
             news={{ ...data, title_img: data.title_img || "fallback.jpg" }}
             heightClass="h-full"
+            widthClass="w-full"
             hoverEffect={false}
           />
           <span className="flex items-center justify-center pt-3 text-center">
