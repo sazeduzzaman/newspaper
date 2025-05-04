@@ -64,8 +64,6 @@ export default async function NewsDetailsPage({
 }) {
   const { categoryDetails, newDetails } = await params;
 
-  console.log(categoryDetails, newDetails);
-
   // ✅ It's fine to use revalidate here
   const res = await fetch(
     `https://backoffice.ajkal.us/news-detail/${newDetails}`,

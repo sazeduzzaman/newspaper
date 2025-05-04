@@ -11,7 +11,7 @@ export default function BreakingNewsItems({
   const nonFeatured = breakingItems.slice(1, 4);
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-6 pt-0">
       <div className="grid grid-cols-12 gap-6">
         {/* Featured Section: Spans 8 columns on large screens */}
         <div className="col-span-12 lg:col-span-8">

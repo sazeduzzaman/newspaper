@@ -4,7 +4,6 @@ import BreakingNewsItems from "./BreakingNewsItems";
 
 export default async function BreakingNews() {
   const breakingItems = await breakingNews(); // Fetch data from the server
-  console.log(breakingItems);
   return (
     <div>
       <BreakingNewsItems breakingItems={breakingItems} />

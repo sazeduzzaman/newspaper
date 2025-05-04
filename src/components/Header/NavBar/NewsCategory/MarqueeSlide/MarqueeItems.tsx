@@ -8,7 +8,6 @@ import Link from "next/link";
 export default function MarqueeItems({
   breakingItems,
 }: BreakingNewsMarqueProps) {
-  console.log(breakingItems, "breakingItems");
   const [emblaRef] = useEmblaCarousel(
     { loop: true, containScroll: "keepSnaps" },
     [

@@ -6,7 +6,6 @@ import Link from "next/link";
 import React from "react";
 
 export default function LatestNewsItems({ latestItems }: LatestNewsProps) {
-  console.log(latestItems, "latestItems");
 
   return (
     <>

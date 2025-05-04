@@ -3,8 +3,8 @@ import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/HomePage/Header/Header";
 import "@styles/globals.css";
+import Header from "@/components/Header/Header";
 
 export const metadata = {
   title: "সাপ্তাহিক আজকাল || Weekly Ajkal",

@@ -17,6 +17,7 @@
 :root {
     --link-color: oklch(0.210 0.006285 0.885); /* This is invalid for Disqus */
   }
+
 @layer utilities {
     .menu-border {
         border-right: 1px solid #fff;
@@ -57,3 +58,4 @@
         @apply text-[18px]/[24px] font-normal duration-300 hover:text-[#808080];
     }
 }
+

@@ -12,8 +12,6 @@ export default function CategoryData({ data }: CategoryDataProps) {
 
   const featureItems = featured.slice(0, 1);
   const nonFeatureSpecificItems = nonFeatured.slice(0, 4);
-  // const nonFeatureItems = nonFeatured.slice(4);
-  // console.log(nonFeatureItems, "nonFeatureItems")
   return (
     <div className="my-10">
       <div className="container mx-auto text-white sm:px-0">

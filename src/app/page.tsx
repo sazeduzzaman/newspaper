@@ -32,7 +32,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="bg-white py-10 dark:bg-white dark:text-gray-800">
+      <div className="bg-white py-8 dark:bg-white dark:text-gray-800">
         {/*Home Section Start */}
         <Home />
         {/*Home Section End */}

@@ -8,7 +8,6 @@ import React from "react";
 export default function MostViewedNewsItems({
   mostViewedItems,
 }: MostViewedNewsProps) {
-  console.log(mostViewedItems, "mostViewedItems");
   const ViewedItems = mostViewedItems.slice(0, 9);
 
   return (
